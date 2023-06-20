@@ -1,7 +1,8 @@
 import {Link,Route, Routes} from 'react-router-dom'
 import React from 'react';
 import Home from './components/Home'
-import Personajes from './components/Personajes';
+import Personajes from './components/Personajes'
+import NotFound from './components/NotFound';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path='/' exact="true" element={<Home/>}/>
           <Route path='/personajes' element={<Personajes/>}/>
+          <Route path='*' element={<NotFound/>}/>
         </Routes>
     </div>
   );
