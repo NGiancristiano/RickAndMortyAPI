@@ -28,7 +28,7 @@ function Personajes () {
     
     const nextPage = async() => {
         await setPagina(pagina+1)
-        fetch(`https://rickandmortyapi.com/api/character?page=${pagina}`)
+        fetch(`https://rickandmortyapi.com/api/character?page=${pagina+1}`)
         .then(res => res.json())
         .then(data => {setPersonajes(data.results)})
         .catch(e => console.log(e))
@@ -37,7 +37,7 @@ function Personajes () {
     const prevPage = async() => {
         if(pagina>1){
             await setPagina(pagina-1)
-            fetch(`https://rickandmortyapi.com/api/character?page=${pagina}`)
+            fetch(`https://rickandmortyapi.com/api/character?page=${pagina-1}`)
             .then(res => res.json())
             .then(data => {setPersonajes(data.results)})
             .catch(e => console.log(e))
